@@ -9,6 +9,7 @@ import {
 import Layout from './componemt/Layout'
 import Login from './componemt/Login'
 import ErrorPage from './componemt/ErrorPage'
+import Blog from './componemt/Blog'
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element:  <Login> </Login>,
+      },
+      {
+        path: "/blog",
+        element:  <Blog> </Blog>,
       },
     ],
   },

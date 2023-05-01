@@ -12,7 +12,7 @@ const Header = () => {
             <div className='flex flex-col lg:flex-row'>
             <NavLink to="/" className={({ isActive }) => (isActive ? 'text-yellow-200 pr-12 pl-2 lg:pl-80 mt-5 lg:mt-0'  : 'bg-red pr-12 pl-2 lg:pl-80 mt-5 lg:mt-0')}>Home</NavLink>
             <NavLink to="/login" className={({ isActive }) => (isActive ? 'text-yellow-200 pr-12 pl-2'  : 'bg-red pr-12 pl-2')}>About</NavLink>
-            <NavLink to="/house" className={({ isActive }) => (isActive ? 'text-yellow-200 pr-12 pl-2'  : 'bg-red pr-12 pl-2')}>Blogs</NavLink>
+            <NavLink to="/blog" className={({ isActive }) => (isActive ? 'text-yellow-200 pr-12 pl-2'  : 'bg-red pr-12 pl-2')}>Blogs</NavLink>
             </div>
            </div>   
         </div>
