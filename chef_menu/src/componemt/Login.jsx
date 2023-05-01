@@ -1,12 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 
-const Error = () => {
+const Login = () => {
     return (
         <div>
-            This is error page.
+            This is login page.
         </div>
     );
 };
 
-export default Error;
+export default Login;
