@@ -5,13 +5,20 @@ import React from 'react';
 const Body = ({card}) => {
  //   console.log(card)
  // eslint-disable-next-line react/prop-types
- const {chefPicture,chefName,yearsOfExperience,numberOfRecipes,likes} = card
+ const {chefPicture,chefName,yearsOfExperience,numberOfRecipes,likes} = card;
+
+
     return (
         <div className='mb-10'> 
 
       <div className="mt-2">
         <div className="card w-96 glass bg-slate-300 hover:bg-slate-400">
-          
+          <figure>
+            <img className='h-72 w-full'
+              src={chefPicture}
+              alt="car!"
+            />
+          </figure>
           <div className="card-body">
             <h2 className="card-title">{chefName}</h2>
             <div className="card-actions justify-end">
@@ -29,8 +36,6 @@ const Body = ({card}) => {
             </div>
           </div>
         </div>
-
-
       </div>
         </div>
     );
