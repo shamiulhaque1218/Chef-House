@@ -1,8 +1,11 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from './provider/AuthProvider';
+
 
 const Header = () => {
+    const {user} = useContext(AuthContext);
     return (
         <div className='lg:h-24 h-60  rounded'>
            <div className="navbar-start lg:navbar text-lg text-white">
@@ -13,6 +16,10 @@ const Header = () => {
             <NavLink to="/" className={({ isActive }) => (isActive ? 'text-yellow-200 pr-12 pl-2 lg:pl-80 mt-5 lg:mt-0'  : 'bg-red pr-12 pl-2 lg:pl-80 mt-5 lg:mt-0')}>Home</NavLink>
             <NavLink to="/registration" className={({ isActive }) => (isActive ? 'text-yellow-200 pr-12 pl-2'  : 'bg-red pr-12 pl-2')}>About</NavLink>
             <NavLink to="/blog" className={({ isActive }) => (isActive ? 'text-yellow-200 pr-12 pl-2'  : 'bg-red pr-12 pl-2')}>Blogs</NavLink>
+
+            {
+                user && <span> welcome {user.email}</span>
+            }
             </div>
            </div>   
         </div>

@@ -1,11 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
 const Body = ({card}) => {
  //   console.log(card)
  // eslint-disable-next-line react/prop-types
- const {chefPicture,chefName,yearsOfExperience,numberOfRecipes,likes} = card;
+ const {id,chefPicture,chefName,yearsOfExperience,numberOfRecipes,likes} = card;
 
 
     return (
@@ -30,9 +31,9 @@ const Body = ({card}) => {
             <p> <img src="like.png" className="h-8 w-8 inline" alt="" /> {likes} people Likes</p>
             </div>
             
-            <div className="card-actions justify-end ">
+            <Link to={`/card/${id}`} className="card-actions justify-end ">
               <button className="btn btn-primary ">View Recipes Button!</button>
-            </div>
+            </Link>
             </div>
           </div>
         </div>

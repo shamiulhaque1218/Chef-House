@@ -7,7 +7,7 @@ import Body from "./Body";
 const Main = () => {
     const data = useLoaderData();
     
-    const [num,setnum] = useState(4) 
+    const [num,setnum] = useState(6) 
     const btn = () => {
      const number = num + 2
      setnum(number);
@@ -16,7 +16,7 @@ const Main = () => {
   const uk = () => {
    //console.log('ok')
   }
-    const loadCount =  uk ? num : 5; 
+    const loadCount =  uk ? num : 6; 
 
   return (
     <div>
