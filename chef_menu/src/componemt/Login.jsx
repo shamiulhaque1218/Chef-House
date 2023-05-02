@@ -1,9 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext, useState } from 'react';
 import { AuthContext } from './provider/AuthProvider';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const {signUser} = useContext(AuthContext);
+  const navigate = useNavigate();
     const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,6 +24,7 @@ const Login = () => {
     .then((result) => {
       const loggedUser = result.user;
       console.log(loggedUser);
+      navigate("/")
     })
     .catch((error) => {
       console.log(error);
@@ -42,7 +45,6 @@ const Login = () => {
       </div>
       <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline">Log in</button>
     </form>
-
     </div>
   );
 };

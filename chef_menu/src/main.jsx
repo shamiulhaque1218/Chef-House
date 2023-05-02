@@ -13,6 +13,7 @@ import Blog from './componemt/Blog'
 import Registration from './componemt/Registration'
 import AuthProvider from './componemt/provider/AuthProvider'
 import ViewDetailes from './componemt/ViewDetailes'
+import PrivateRoute from './componemt/PrivateRoute'
 
 
 const router = createBrowserRouter([
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/card/:id",
-        element:  <ViewDetailes> </ViewDetailes>,
+        element:  <PrivateRoute> <ViewDetailes> </ViewDetailes> </PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/card/${params.id}`),
 
       },

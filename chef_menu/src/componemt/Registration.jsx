@@ -11,7 +11,7 @@ const Registration = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [photoUrl, setPhotoUrl] = useState("");
+  const [photoURL, setPhotoUrl] = useState("");
   const [error, setError] = useState("");
 
   const handleNameChange = (event) => {
@@ -33,13 +33,14 @@ const Registration = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(name,email,password,photoUrl);
+    console.log(name,email,password,photoURL);
     // eslint-disable-next-line no-useless-escape
     if(!/(?=.{6,8}$)/.test(password)) {
       setError("wrong password give 6 to 8 character");
        return;
     }
-    if(name,email,password,photoUrl) {
+    if(name,email,password,photoURL
+      ) {
       registerUser(email,password)
       .then ((result) => {
         console.log(result.user);
@@ -70,7 +71,7 @@ const Registration = () => {
       </div>
       <div className="mb-4">
         <label htmlFor="photoUrl" className="block text-gray-700 font-bold mb-2">Photo URL:</label>
-        <input type="text" id="photoUrl" value={photoUrl} onChange={handlePhotoUrl} className="border-gray-400 border-2 p-2 rounded-md w-full focus:outline-none focus:border-blue-500" />
+        <input type="text" id="photoUrl" value={photoURL} onChange={handlePhotoUrl} className="border-gray-400 border-2 p-2 rounded-md w-full focus:outline-none focus:border-blue-500" />
       </div>
       <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline">Register Now</button>
       <Link to="/login"> Please logIn </Link> <br />

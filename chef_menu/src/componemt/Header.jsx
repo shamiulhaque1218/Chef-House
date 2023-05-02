@@ -5,7 +5,15 @@ import { AuthContext } from './provider/AuthProvider';
 
 
 const Header = () => {
-    const {user} = useContext(AuthContext);
+    const {user,logOut} = useContext(AuthContext);
+    console.log(user);
+    const handelLogOut = () => {
+  logOut().then((res) => {
+    console.log(res).catch((err) => {
+        console.log(err);
+    })
+  })
+    }
     return (
         <div className='lg:h-24 h-60  rounded'>
            <div className="navbar-start lg:navbar text-lg text-white">
@@ -18,9 +26,10 @@ const Header = () => {
             <NavLink to="/blog" className={({ isActive }) => (isActive ? 'text-yellow-200 pr-12 pl-2'  : 'bg-red pr-12 pl-2')}>Blogs</NavLink>
 
             {
-                user && <span> welcome {user.email}</span>
+                user && <span> welcome {user.email}</span> 
             }
             </div>
+            <button className='text-center' onClick={handelLogOut}>Log out</button>
            </div>   
         </div>
     );
