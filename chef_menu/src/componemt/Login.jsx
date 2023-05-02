@@ -1,7 +1,9 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { AuthContext } from './provider/AuthProvider';
 
 const Login = () => {
+  const {signUser} = useContext(AuthContext);
     const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,7 +18,14 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(`Submitted email: ${email}, password: ${password}`);
-    // You can add logic here to submit the form to a server or perform other actions.
+    signUser(email,password)
+    .then((result) => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
   };
 
   return (

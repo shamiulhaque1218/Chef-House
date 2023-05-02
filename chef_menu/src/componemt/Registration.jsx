@@ -1,12 +1,18 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from './provider/AuthProvider';
 
 const Registration = () => {
+
+  const {registerUser} = useContext(AuthContext);
+  //console.log(registerUser);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [photoUrl, setPhotoUrl] = useState("");
+  const [error, setError] = useState("");
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -22,11 +28,27 @@ const Registration = () => {
 
   const handlePhotoUrl = (event) => {
     setPhotoUrl(event.target.value);
+
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(`Submitted name: ${name}, email: ${email}, password: ${password}, photo URL: ${photoUrl}`);
+    console.log(name,email,password,photoUrl);
+    // eslint-disable-next-line no-useless-escape
+    if(!/(?=.{6,8}$)/.test(password)) {
+      setError("wrong password give 6 to 8 character");
+       return;
+    }
+    if(name,email,password,photoUrl) {
+      registerUser(email,password)
+      .then ((result) => {
+        console.log(result.user);
+      }).catch((err) => {
+        console.log(err.message)
+      })
+    }
+    
+    //console.log(`Submitted name: ${name}, email: ${email}, password: ${password}, photo URL: ${photoUrl}`);
     // You can add logic here to submit the form to a server or perform other actions.
   };
 
@@ -51,8 +73,12 @@ const Registration = () => {
         <input type="text" id="photoUrl" value={photoUrl} onChange={handlePhotoUrl} className="border-gray-400 border-2 p-2 rounded-md w-full focus:outline-none focus:border-blue-500" />
       </div>
       <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline">Register Now</button>
-      <Link to="/login"> Please logIn </Link>
+      <Link to="/login"> Please logIn </Link> <br />
+      { 
+      error
+      }
     </form>
+   
 
     </div>
   );

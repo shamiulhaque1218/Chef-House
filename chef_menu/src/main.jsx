@@ -12,6 +12,7 @@ import ErrorPage from './componemt/ErrorPage'
 import Blog from './componemt/Blog'
 import Registration from './componemt/Registration'
 import AuthProvider from './componemt/provider/AuthProvider'
+import ViewDetailes from './componemt/ViewDetailes'
 
 
 const router = createBrowserRouter([
@@ -23,7 +24,13 @@ const router = createBrowserRouter([
       {
         path: "/",
         element:  <Main> </Main>,
-        loader: () => fetch('http://localhost:5000/alldata'),
+        loader: () => fetch('http://localhost:5000/card'),
+
+      },
+      {
+        path: "/card/:id",
+        element:  <ViewDetailes> </ViewDetailes>,
+        loader: ({params}) => fetch(`http://localhost:5000/card/${params.id}`),
 
       },
       {
