@@ -10,6 +10,7 @@ import Layout from './componemt/Layout'
 import Login from './componemt/Login'
 import ErrorPage from './componemt/ErrorPage'
 import Blog from './componemt/Blog'
+import Registration from './componemt/Registration'
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element:  <Main> </Main>,
+        loader: () => fetch('http://localhost:5000/alldata'),
+
       },
       {
         path: "/login",
@@ -29,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element:  <Blog> </Blog>,
+      },
+      {
+        path: "/registration",
+        element:  <Registration> </Registration>,
       },
     ],
   },

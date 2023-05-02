@@ -3,8 +3,8 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='mt-2 mb-0 '>
-            <footer className="footer footer-center p-10  text-base-content rounded bg-violet-300">
+        <div className='mt-2 mb-0 border'>
+            <footer className="footer footer-center p-10  text-base-content rounded text-white">
   <div className="text-xl ">
     <img className='h-12 w-12 rounded-lg' src="https://cdn.dribbble.com/users/3399824/screenshots/6521075/mascot-2-04.jpg" alt="" />
     <h2 >Chef House</h2>
