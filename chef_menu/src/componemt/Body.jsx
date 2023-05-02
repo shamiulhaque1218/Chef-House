@@ -11,12 +11,7 @@ const Body = ({card}) => {
 
       <div className="mt-2">
         <div className="card w-96 glass bg-slate-300 hover:bg-slate-400">
-          <figure>
-            <img
-              src={chefPicture}
-              alt="car!"
-            />
-          </figure>
+          
           <div className="card-body">
             <h2 className="card-title">{chefName}</h2>
             <div className="card-actions justify-end">
