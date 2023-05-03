@@ -5,6 +5,7 @@ import { useLoaderData } from "react-router-dom";
 import Body from "./Body";
 import Food from "./Food"
 
+
 const Main = () => {
     const data = useLoaderData(); 
 
