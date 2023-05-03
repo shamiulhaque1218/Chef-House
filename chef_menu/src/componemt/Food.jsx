@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
-import { data } from 'autoprefixer';
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 
@@ -17,8 +16,6 @@ const Food = ({food}) => {
                <p >{description?.slice(0,185)}...<button className='text-violet-600'>see more</button> </p>
             </div>
            </div>
-
-           
         </div>
     );
 };
