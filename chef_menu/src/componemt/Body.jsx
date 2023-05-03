@@ -1,9 +1,10 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
 const Body = ({card}) => {
+
+  
  //   console.log(card)
  // eslint-disable-next-line react/prop-types
  const {id,chefPicture,chefName,yearsOfExperience,numberOfRecipes,likes} = card;

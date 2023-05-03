@@ -1,12 +1,23 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Casusel from "./Casusel";
 import { useLoaderData } from "react-router-dom";
 import Body from "./Body";
+import Food from "./Food"
 
 const Main = () => {
-    const data = useLoaderData();
-    
+    const data = useLoaderData(); 
+
+
+    const [dataFood,setDataFood] =useState([]);
+    useEffect(() => {
+      fetch("http://localhost:5000/food")
+      .then(res => res.json())
+      .then(data => setDataFood(data));
+  },[])
+
+
+
     const [num,setnum] = useState(6) 
     const btn = () => {
      const number = num + 2
@@ -21,6 +32,13 @@ const Main = () => {
   return (
     <div>
       <Casusel> </Casusel>
+
+      <h2 className="text-white text-4xl text-center my-20">Traditional Italian Foods </h2>
+      <div className="grid grid-cols-4">
+          {
+            dataFood.map(food => <Food food={food} key={food.id}> </Food>)
+          }
+      </div>
       
       <h2 className="text-white text-4xl text-center my-20">Explore Chef Details </h2>
 
