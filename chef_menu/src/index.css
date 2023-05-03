@@ -6,4 +6,8 @@
     .height{
       height:auto;
     }
+    .pic{
+      height: 500px;
+      width: 440px;
+    }
   }

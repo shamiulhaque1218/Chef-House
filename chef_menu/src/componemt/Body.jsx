@@ -29,7 +29,7 @@ const Body = ({card}) => {
             <div className="">
             <div>
             <p className="my-5"> <img src="book.png" className="h-8 w-8 inline" alt="" /> Numbers of recipes : {numberOfRecipes} </p>
-            <p> <img src="like.png" className="h-8 w-8 inline" alt="" /> {likes} people Likes</p>
+            <p> <img src="like.png" className="h-8 w-8 inline" alt="" /> <span className='ml-2'> {likes}  people Likes </span> </p>
             </div>
             
             <Link to={`/card/${id}`} className="card-actions justify-end ">
