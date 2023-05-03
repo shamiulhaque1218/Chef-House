@@ -21,7 +21,7 @@ console.log(error.message);
 
     return (
         <div>
-           <button onClick={handelGoogleSign} className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline">Log in With Google</button>
+           <button onClick={handelGoogleSign} className="bg-violet-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline">Login With Google</button>
         </div>
     );
 };

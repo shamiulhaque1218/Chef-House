@@ -25,13 +25,13 @@ const router = createBrowserRouter([
       {
         path: "/",
         element:  <Main> </Main>,
-        loader: () => fetch('http://localhost:5000/card'),
+        loader: () => fetch('https://server-site-assignment-10-shamiulhaque1218.vercel.app/card'),
 
       },
       {
         path: "/card/:id",
         element:  <PrivateRoute> <ViewDetailes> </ViewDetailes> </PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/card/${params.id}`),
+        loader: ({params}) => fetch(`https://server-site-assignment-10-shamiulhaque1218.vercel.app/card/${params.id}`),
 
       },
       {

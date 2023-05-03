@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from './provider/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import GoogleSign from './GoogleSign';
+import GithubSign from './GithubSign';
 
 const Login = () => {
   const {signUser} = useContext(AuthContext);
@@ -55,6 +56,9 @@ const Login = () => {
 
       <div className='my-5'>
       <GoogleSign> </GoogleSign>
+      </div>
+      <div className='my-5'>
+      <GithubSign> </GithubSign>
       </div>
     </form>
     
