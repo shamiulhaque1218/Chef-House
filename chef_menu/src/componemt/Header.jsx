@@ -27,11 +27,12 @@ const Header = () => {
             <NavLink to="/blog" className={({ isActive }) => (isActive ? 'text-yellow-200 pr-12 pl-2'  : 'bg-red pr-12 pl-2')}>Blogs</NavLink>
 
             {
-                user && <span> <img id='img' className='h-10 w-10 rounded-full' src="https://www.mapheq.co.za/wp-content/uploads/2017/01/Profile-Pic-Demo-1.jpg" alt="" /> </span> 
+                user && <span> <img id='img' className='h-10 w-10 rounded-full' src={user.photoURL
+                } alt="" /> </span> 
                         
             }
              <Tooltip anchorSelect="#img" className=' mt-12' place="bottom">
-                    {user.email}
+                    {user ? user.displayName: ""}
             </Tooltip> 
             </div> 
             {

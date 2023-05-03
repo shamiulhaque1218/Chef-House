@@ -1,9 +1,9 @@
-// eslint-disable-next-line no-unused-vars
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {FaRegStar ,FaStar } from 'react-icons/fa';
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import Rating from "react-rating";
 // eslint-disable-next-line react/prop-types

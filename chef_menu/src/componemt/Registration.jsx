@@ -58,6 +58,7 @@ const Registration = () => {
     
     //console.log(`Submitted name: ${name}, email: ${email}, password: ${password}, photo URL: ${photoUrl}`);
     // You can add logic here to submit the form to a server or perform other actions.
+    
   };
 
   return (
@@ -89,9 +90,10 @@ const Registration = () => {
       {
         success
       }
+        
+  
     </form>
    
-
     </div>
   );
 };

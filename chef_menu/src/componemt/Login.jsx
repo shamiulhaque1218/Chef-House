@@ -1,7 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext, useState } from 'react';
 import { AuthContext } from './provider/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import GoogleSign from './GoogleSign';
 
 const Login = () => {
   const {signUser} = useContext(AuthContext);
@@ -46,10 +47,15 @@ const Login = () => {
         <label htmlFor="password" className="block text-gray-700 font-bold mb-2">Password:</label>
         <input type="password" id="password" value={password} onChange={handlePassword} className="border-gray-400 border-2 p-2 rounded-md w-full focus:outline-none focus:border-blue-500" />
       </div>
-      <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline">Log in</button> <br />
+      <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline">Log in</button>
+      <Link className='bg-rose-400 ml-5 text-white rounded-md p-2' to="/registration">Please Register !</Link> <br />
       {
       error
       }
+
+      <div className='my-5'>
+      <GoogleSign> </GoogleSign>
+      </div>
     </form>
     
     </div>
