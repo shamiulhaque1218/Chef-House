@@ -5,9 +5,9 @@ const Casusel = () => {
     return (
         <div>
 
-<div className="carousel w-5/6 ml-28 mt-8">
+<div className="carousel lg:w-5/6 w-full lg:ml-28  mt-20 lg:mt-8">
   <div id="slide1" className="carousel-item relative w-full">
-    <img src="https://img.freepik.com/free-photo/top-view-asian-dish-with-chopsticks-copy-space_23-2148694382.jpg?t=st=1682964151~exp=1682964751~hmac=b7861951ee2cfaa12399382486120de36e5aa993de66ebc752c3abb2debe88c8" className="w-full h-96 mt-2 mx-5 rounded-lg" />
+    <img src="https://img.freepik.com/free-photo/top-view-asian-dish-with-chopsticks-copy-space_23-2148694382.jpg?t=st=1682964151~exp=1682964751~hmac=b7861951ee2cfaa12399382486120de36e5aa993de66ebc752c3abb2debe88c8" className="w-full h-96 mt-2 lg:mx-5  rounded-lg" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide4" className="btn btn-circle">❮</a> 
       <a href="#slide2" className="btn btn-circle">❯</a>

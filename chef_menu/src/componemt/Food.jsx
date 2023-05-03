@@ -8,7 +8,7 @@ const Food = ({food}) => {
     //console.log(food);
     const {name,picture,description} = food
     return (
-        <div className='mb-10 hover:transform transition duration-300 hover:scale-110 hover:translate-x-2 hover:translate-y-2 '>
+        <div className='lg:mb-10 hover:transform transition duration-300 hover:scale-110 hover:translate-x-2 hover:translate-y-2 '>
            <div className="card w-72 bg-base-100 shadow-xl rounded-xl mb-10 pb-10">
                <figure ><img src={picture} className='rounded-full h-44 w-full px-4 pt-4' alt="Shoes" /></figure>
                 <div className="card-body h-56">

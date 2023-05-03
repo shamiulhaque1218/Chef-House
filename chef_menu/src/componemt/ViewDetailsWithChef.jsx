@@ -27,17 +27,17 @@ const ViewDetailsWithChef = ({ idData }) => {
   return (
     <div>
       <div>
-        <div className="grid grid-cols-5 gap-10">
-          <div className="pl-20 pb-20 mr-0 pr-0 col-span-2">
-            <img src={chefPicture} className="pic" alt="" />
+        <div className="grid lg:grid-cols-5 lg:gap-10">
+          <div className="lg:pl-20 lg:pb-20 col-span-2">
+            <img src={chefPicture} className="lg:pic ml-12 lg:ml-0 lg:pl-0 pl-2" alt="" />
           </div>
-          <div className="col-span-3">
-            <p className="font-bold text-6xl mt-28">{chefName}</p>
-            <p className="font-semibold text-xl p-8 pl-0">{descripction}</p>
-            <p className="font-semibold text-xl ">
+          <div className="col-span-3 ml-3">
+            <p className="font-bold lg:text-6xl text-3xl  lg:mt-28 mt-6">{chefName}</p>
+            <p className="lg:font-semibold lg:text-xl text-lg lg:py-8 p-2 pl-0">{descripction}</p>
+            <p className="font-semibold lg:text-xl text-lg">
               Number of recipes: {numberOfRecipes}
             </p>
-            <p className="font-semibold text-xl py-2">
+            <p className="font-semibold lg:text-xl text-lg py-2">
               Experience: {yearsOfExperience} years
             </p>
             <p className="py-3">
@@ -50,15 +50,15 @@ const ViewDetailsWithChef = ({ idData }) => {
 
        
 
-        <div className="border mx-24 mb-20 hover:transform transition duration-300 hover:scale-110 hover:translate-x-2 hover:translate-y-2 ">
-          <div className="card  bg-base-100 shadow-xl rounded-xl mb-10">
+        <div className="border lg:mx-24 lg:mb-20 lg:hover:transform lg:transition duration-300 lg:hover:scale-110 lg:hover:translate-x-2 lg:hover:translate-y-2 ">
+          <div className="card  bg-base-100 shadow-xl rounded-xl lg:mb-10 mb-5">
           <button className='icon_book text-end p-6' onClick={handlemark}> <FontAwesomeIcon  icon={faBookmark}  beatFade /> </button> 
             <figure>
               <img
                 src={recipe[1].picture}
                 className="rounded-2xl h-44 w-80 px-4 pt-4"
                 alt="Shoes"
-              /> <span className="pl-48">Rating: 
+              /> <span className="lg:pl-48">Rating: 
               
               <Rating readonly
   placeholderRating={recipe[1].rating}
@@ -82,8 +82,8 @@ const ViewDetailsWithChef = ({ idData }) => {
 
 
         </div>
-        <div className="border mx-24 mb-20 hover:transform transition duration-300 hover:scale-110 hover:translate-x-2 hover:translate-y-2 ">
-          <div className="card  bg-base-100 shadow-xl rounded-xl mb-10">
+        <div className="border lg:mx-24  lg:mb-20 lg:hover:transform lg:transition duration-300 lg:hover:scale-110 lg:hover:translate-x-2 lg:hover:translate-y-2 ">
+          <div className="card  bg-base-100 shadow-xl rounded-xl lg:mb-10 mb-5">
           <button className='icon_book text-end p-6' onClick={handlemark}> <FontAwesomeIcon  icon={faBookmark}  beatFade /> </button> 
             <figure>
                 
@@ -91,7 +91,7 @@ const ViewDetailsWithChef = ({ idData }) => {
                 src={recipe[0].picture}
                 className="rounded-2xl h-44 w-80 px-4 pt-4"
                 alt="food"
-              /> <span className="pl-48">Rating: 
+              /> <span className="lg:pl-48">Rating: 
 
 
 <Rating readonly
@@ -114,8 +114,8 @@ const ViewDetailsWithChef = ({ idData }) => {
         </div>
 
         
-        <div className="border mx-24 mb-20 hover:transform transition duration-300 hover:scale-110 hover:translate-x-2 hover:translate-y-2 ">
-          <div className="card  bg-base-100 shadow-xl rounded-xl mb-10">
+        <div className="border lg:mx-24  mb-20 lg:hover:transform lg:transition duration-300 lg:hover:scale-110 lg:hover:translate-x-2 lg:hover:translate-y-2 ">
+          <div className="card  bg-base-100 shadow-xl rounded-xl lg:mb-10 mb-5">
           <button className='icon_book text-end p-6' onClick={handlemark}> <FontAwesomeIcon  icon={faBookmark}  beatFade /> </button> 
             <figure>
                 
@@ -123,7 +123,7 @@ const ViewDetailsWithChef = ({ idData }) => {
                 src={recipe[2].picture}
                 className="rounded-2xl h-44 w-80 px-4 pt-4"
                 alt="Shoes"
-              /> <span className="pl-48">Rating: 
+              /> <span className="lg:pl-48">Rating: 
               
               
               <Rating readonly

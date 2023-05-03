@@ -9,7 +9,7 @@ const ViewDetailes = () => {
 
     return (
         <div className='text-slate-700 bg-white'>
-            <h2 className=" text-4xl text-center text-black my-10 font-semibold pt-20">Chef Details </h2>
+            <h2 className="lg:text-4xl text-3xl text-center text-black my-10 font-semibold pt-20">Chef Details </h2>
            {
             detailes.map(idData => <ViewDetailsWithChef idData={idData} key={idData.id}>
 

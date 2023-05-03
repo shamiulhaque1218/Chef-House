@@ -34,15 +34,15 @@ const Main = () => {
       <Casusel> </Casusel>
 
       <h2 className="text-white text-4xl text-center my-20">Traditional Italian Foods </h2>
-      <div className="grid grid-cols-4">
+      <div className="grid lg:grid-cols-4 ml-12 lg:ml-0 pl-1 lg:pl-0">
           {
             dataFood.map(food => <Food food={food} key={food.id}> </Food>)
           }
       </div>
       
-      <h2 className="text-white text-4xl text-center my-20">Explore Chef Details </h2>
+      <h2 className="text-white text-4xl text-center my-12 lg:my-20">Explore Chef Details </h2>
 
-     <div className="grid grid-cols-3 ml-10 ">
+     <div className="grid lg:grid-cols-3 ml-1 lg:ml-10 ">
      {data.slice(0,loadCount).map(card => (
           <Body key={card.id} btn={btn} card={card} />
         ))}

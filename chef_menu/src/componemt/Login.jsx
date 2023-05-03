@@ -49,7 +49,7 @@ const Login = () => {
         <input type="password" id="password" value={password} onChange={handlePassword} className="border-gray-400 border-2 p-2 rounded-md w-full focus:outline-none focus:border-blue-500" />
       </div>
       <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline">Log in</button>
-      <Link className='bg-rose-400 ml-5 text-white rounded-md p-2' to="/registration">Please Register !</Link> <br />
+      <Link className='bg-rose-400 lg:ml-5 mt-2 lg:mt-2 text-white rounded-md block lg:inline p-2' to="/registration">Please Register !</Link> <br />
       {
       error
       }
