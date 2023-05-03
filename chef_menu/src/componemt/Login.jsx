@@ -8,6 +8,7 @@ const Login = () => {
   const navigate = useNavigate();
     const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleEmail = (event) => {
     setEmail(event.target.value);
@@ -19,7 +20,9 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(`Submitted email: ${email}, password: ${password}`);
+    //console.log(`Submitted email: ${email}, password: ${password}`);
+    setError('');
+    event.target.reset();
     signUser(email,password)
     .then((result) => {
       const loggedUser = result.user;
@@ -27,7 +30,7 @@ const Login = () => {
       navigate("/")
     })
     .catch((error) => {
-      console.log(error);
+      setError(error.message);
     })
   };
 
@@ -43,8 +46,12 @@ const Login = () => {
         <label htmlFor="password" className="block text-gray-700 font-bold mb-2">Password:</label>
         <input type="password" id="password" value={password} onChange={handlePassword} className="border-gray-400 border-2 p-2 rounded-md w-full focus:outline-none focus:border-blue-500" />
       </div>
-      <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline">Log in</button>
+      <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline">Log in</button> <br />
+      {
+      error
+      }
     </form>
+    
     </div>
   );
 };

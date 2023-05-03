@@ -1,7 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from './provider/AuthProvider';
+import { Tooltip } from 'react-tooltip'
 
 
 const Header = () => {
@@ -21,15 +22,24 @@ const Header = () => {
             <a className="btn btn-ghost normal-case text-4xl italic">Chef House</a>
             
             <div className='flex flex-col lg:flex-row'>
-            <NavLink to="/" className={({ isActive }) => (isActive ? 'text-yellow-200 pr-12 pl-2 lg:pl-80 mt-5 lg:mt-0'  : 'bg-red pr-12 pl-2 lg:pl-80 mt-5 lg:mt-0')}>Home</NavLink>
-            <NavLink to="/registration" className={({ isActive }) => (isActive ? 'text-yellow-200 pr-12 pl-2'  : 'bg-red pr-12 pl-2')}>About</NavLink>
+            <NavLink to="/" className={({ isActive }) => (isActive ? 'text-yellow-200 pr-12 pl-2 lg:pl-64 mt-5 lg:mt-0'  : 'bg-red pr-12 pl-2 lg:pl-64 mt-5 lg:mt-0')}>Home</NavLink>
+            <NavLink to="/registration" className={({ isActive }) => (isActive ? 'text-yellow-200 pr-12 pl-2'  : 'bg-red pr-12 pl-2')}>Registration</NavLink>
             <NavLink to="/blog" className={({ isActive }) => (isActive ? 'text-yellow-200 pr-12 pl-2'  : 'bg-red pr-12 pl-2')}>Blogs</NavLink>
 
             {
-                user && <span> welcome {user.email}</span> 
+                user && <span> <img id='img' className='h-10 w-10 rounded-full' src="https://www.mapheq.co.za/wp-content/uploads/2017/01/Profile-Pic-Demo-1.jpg" alt="" /> </span> 
+                        
             }
-            </div>
-            <button className='text-center' onClick={handelLogOut}>Log out</button>
+             <Tooltip anchorSelect="#img" className=' mt-12' place="bottom">
+                    {user.email}
+            </Tooltip> 
+            </div> 
+            {
+              user && <button className='pl-5' onClick={handelLogOut}> Log out</button> 
+            }
+            {
+              !user && <Link to="/login" className=''> Log In</Link> 
+            }
            </div>   
         </div>
     );

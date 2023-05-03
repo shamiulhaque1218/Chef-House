@@ -2,8 +2,10 @@
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
+import {FaRegStar ,FaStar } from 'react-icons/fa';
 import React from "react";
+import Rating from "react-rating";
 // eslint-disable-next-line react/prop-types
 const ViewDetailsWithChef = ({ idData }) => {
     const handlemark = (e) => {
@@ -46,18 +48,27 @@ const ViewDetailsWithChef = ({ idData }) => {
           </div>
         </div>
 
-
+       
 
         <div className="border mx-24 mb-20 hover:transform transition duration-300 hover:scale-110 hover:translate-x-2 hover:translate-y-2 ">
           <div className="card  bg-base-100 shadow-xl rounded-xl mb-10">
           <button className='icon_book text-end p-6' onClick={handlemark}> <FontAwesomeIcon  icon={faBookmark}  beatFade /> </button> 
             <figure>
-                
               <img
                 src={recipe[1].picture}
                 className="rounded-2xl h-44 w-80 px-4 pt-4"
                 alt="Shoes"
-              /> <span className="pl-48">Rating: {recipe[1].rating} </span>
+              /> <span className="pl-48">Rating: 
+              
+              <Rating readonly
+  placeholderRating={recipe[1].rating}
+  emptySymbol={<FaRegStar> </FaRegStar>}
+  placeholderSymbol={<FaStar className="text-blue-400"> </FaStar>}
+  fullSymbol={<FaStar> </FaStar>}
+/>
+              
+        
+               </span>
             </figure>
             <div className="card-body ">
               <h2 className="card-title">{}</h2>
@@ -80,7 +91,18 @@ const ViewDetailsWithChef = ({ idData }) => {
                 src={recipe[0].picture}
                 className="rounded-2xl h-44 w-80 px-4 pt-4"
                 alt="food"
-              /> <span className="pl-48">Rating: {recipe[0].rating} </span>
+              /> <span className="pl-48">Rating: 
+
+
+<Rating readonly
+  placeholderRating={recipe[0].rating}
+  emptySymbol={<FaRegStar> </FaRegStar>}
+  placeholderSymbol={<FaStar className="text-blue-400"> </FaStar>}
+  fullSymbol={<FaStar> </FaStar>}
+/>
+              
+              
+               </span>
             </figure>
             <div className="card-body ">
               <h2 className="card-title">{}</h2>
@@ -101,7 +123,17 @@ const ViewDetailsWithChef = ({ idData }) => {
                 src={recipe[2].picture}
                 className="rounded-2xl h-44 w-80 px-4 pt-4"
                 alt="Shoes"
-              /> <span className="pl-48">Rating: {recipe[2].rating} </span>
+              /> <span className="pl-48">Rating: 
+              
+              
+              <Rating readonly
+  placeholderRating={recipe[2].rating}
+  emptySymbol={<FaRegStar> </FaRegStar>}
+  placeholderSymbol={<FaStar className="text-blue-400"> </FaStar>}
+  fullSymbol={<FaStar> </FaStar>}
+/>
+              
+               </span>
             </figure>
             <div className="card-body ">
               <h2 className="card-title">{}</h2>

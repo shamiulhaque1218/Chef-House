@@ -13,6 +13,7 @@ const Registration = () => {
   const [password, setPassword] = useState("");
   const [photoURL, setPhotoUrl] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -34,6 +35,10 @@ const Registration = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(name,email,password,photoURL);
+    setError(''); 
+    setSuccess('');
+    event.target.reset();
+    
     // eslint-disable-next-line no-useless-escape
     if(!/(?=.{6,8}$)/.test(password)) {
       setError("wrong password give 6 to 8 character");
@@ -44,8 +49,10 @@ const Registration = () => {
       registerUser(email,password)
       .then ((result) => {
         console.log(result.user);
+        setSuccess("welcome ! Registration Successfully")
+        
       }).catch((err) => {
-        console.log(err.message)
+        setError(err.message)
       })
     }
     
@@ -59,24 +66,28 @@ const Registration = () => {
 <form onSubmit={handleSubmit} className="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
       <div className="mb-4">
         <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name:</label>
-        <input type="text" id="name" value={name} onChange={handleNameChange} className="border-gray-400 border-2 p-2 rounded-md w-full focus:outline-none focus:border-blue-500" />
+        <input type="text" id="name" value={name} onChange={handleNameChange} className="border-gray-400 border-2 p-2 rounded-md w-full focus:outline-none focus:border-blue-500" required />
       </div>
       <div className="mb-4">
         <label htmlFor="email" className="block text-gray-700 font-bold mb-2">Email:</label>
-        <input type="email" id="email" value={email} onChange={handleEmail} className="border-gray-400 border-2 p-2 rounded-md w-full focus:outline-none focus:border-blue-500" />
+        <input type="email" id="email" value={email} onChange={handleEmail} className="border-gray-400 border-2 p-2 rounded-md w-full focus:outline-none focus:border-blue-500" required/>
+      </div>
+      
+      <div className="mb-4">
+        <label htmlFor="photoUrl" className="block text-gray-700 font-bold mb-2">Photo URL:</label>
+        <input type="text" id="photoUrl" value={photoURL} onChange={handlePhotoUrl} className="border-gray-400 border-2 p-2 rounded-md w-full focus:outline-none focus:border-blue-500" required/>
       </div>
       <div className="mb-4">
         <label htmlFor="password" className="block text-gray-700 font-bold mb-2">Password:</label>
-        <input type="password" id="password" value={password} onChange={handlePassword} className="border-gray-400 border-2 p-2 rounded-md w-full focus:outline-none focus:border-blue-500" />
-      </div>
-      <div className="mb-4">
-        <label htmlFor="photoUrl" className="block text-gray-700 font-bold mb-2">Photo URL:</label>
-        <input type="text" id="photoUrl" value={photoURL} onChange={handlePhotoUrl} className="border-gray-400 border-2 p-2 rounded-md w-full focus:outline-none focus:border-blue-500" />
+        <input type="password" id="password" value={password} onChange={handlePassword} className="border-gray-400 border-2 p-2 rounded-md w-full focus:outline-none focus:border-blue-500" required/>
       </div>
       <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline">Register Now</button>
-      <Link to="/login"> Please logIn </Link> <br />
+      <Link to="/login" className='font-bold ml-5'> Please logIn </Link> <br />
       { 
       error
+      }
+      {
+        success
       }
     </form>
    
