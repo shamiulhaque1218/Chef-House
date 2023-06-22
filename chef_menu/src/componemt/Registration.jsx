@@ -2,6 +2,7 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from './provider/AuthProvider';
+//import { sendEmailVerification } from 'firebase/auth';
 
 const Registration = () => {
 
@@ -49,7 +50,11 @@ const Registration = () => {
       registerUser(email,password)
       .then ((result) => {
         console.log(result.user);
+
+       // const verifyUser = result.user;
+       
         setSuccess("welcome ! Registration Successfully")
+        //sendVerificationEmail(verifyUser);
         
       }).catch((err) => {
         setError(err.message)
@@ -60,6 +65,15 @@ const Registration = () => {
     // You can add logic here to submit the form to a server or perform other actions.
     
   };
+
+  // const sendVerificationEmail = (verifyUser) => {
+  //   sendEmailVerification(verifyUser)
+  //   .then(result => {
+  //     console.log(result);
+  //     alert("please verify");
+  //   })
+    
+  // }
 
   return (
     <div className='m-20'>

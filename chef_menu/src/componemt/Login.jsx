@@ -30,11 +30,18 @@ const Login = () => {
       const loggedUser = result.user;
       console.log(loggedUser);
       navigate("/")
+      if(!loggedUser.emailVerified){
+        alert("Please verify your email");
+      }
+      
     })
     .catch((error) => {
       setError(error.message);
+      
     })
   };
+
+  
 
   return (
     <div className='m-20'>
